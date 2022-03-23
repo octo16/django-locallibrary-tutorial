@@ -41,7 +41,8 @@ To get this project up and running locally on your computer:
 
 
 ``` bash
-LoadModule wsgi_module "/opt/venv/lib64/python3.7/site-packages/mod_wsgi/server/mod_wsgi-py37.cpython-37m-x86_64-linux-gnu.so"   WSGIPythonHome "/opt/venv"
+LoadModule wsgi_module "/opt/venv/lib64/python3.7/site-packages/mod_wsgi/server/mod_wsgi-py37.cpython-37m-x86_64-linux-gnu.so"
+WSGIPythonHome "/opt/venv"
 
 <Directory /opt/django-locallibrary-tutorial/locallibrary>
 	Require all granted
