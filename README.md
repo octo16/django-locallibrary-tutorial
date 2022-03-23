@@ -37,3 +37,18 @@ To get this project up and running locally on your computer:
 1. Open a browser to `http://127.0.0.1:8000/admin/` to open the admin site
 1. Create a few test objects of each type.
 1. Open tab to `http://127.0.0.1:8000` to see the main site, with your new objects.
+
+
+
+``` bash
+LoadModule wsgi_module "/opt/venv/lib64/python3.7/site-packages/mod_wsgi/server/mod_wsgi-py37.cpython-37m-x86_64-linux-gnu.so"   WSGIPythonHome "/opt/venv"
+
+<Directory /opt/django-locallibrary-tutorial/locallibrary>
+	Require all granted
+</Directory>
+
+WSGIDaemonProcess locallibrary python-path=/opt/django-locallibrary-tutorial:/opt/venv/lib/python3.7/site-packages   
+
+WSGIProcessGroup locallibrary
+WSGIScriptAlias / /opt/django-locallibrary-tutorial/locallibrary/wsgi.py
+```
